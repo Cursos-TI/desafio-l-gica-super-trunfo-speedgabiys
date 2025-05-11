@@ -1,11 +1,16 @@
-#include <stdio.h>
-#include <string>
+#include <stdio.h>   // Biblioteca para entrada e saída (printf, scanf).
+#include <stdlib.h>  // Biblioteca para funções gerais como exit().
+#include <string>  // Biblioteca para manipulação de strings.
 
-int main() {
+// Função que inicia  o jogo
 
-    // Declaração de variáveis.
+void iniciarJogo() {
 
-    char Pais1[100], Pais2[100]; // Nome do país.
+    printf("\n    Iniciando o Jogo...    \n");
+
+    // Declarações de variáveis para armazenar informações das  duas cartas(países).
+
+     char Pais1[100], Pais2[100]; // Nome do país.
     char Estado1[100], Estado2[100]; // Variável Estado será identificada pelas letras de A a H.
     char Cidade1[100], Cidade2[100]; // Variável da cidade será númerada de 1 a 4.
 
@@ -15,9 +20,9 @@ int main() {
     int pontos_turisticos1, pontos_turisticos2;  // Número de pontos turisticos.
     float densidade1, densidade2; // Densidade demográfica da cidade.
 
-    // Carta 1
+    // Coletando informações da carta 1
 
-    printf("Carta 1:\n");
+    printf("\n    Carta 1:    \n");
     printf("Digite o nome do país:\n");
     scanf(" %[^\n]", Pais1); //espaço antes do %c para consumir o '\n' pendente
     
@@ -33,9 +38,9 @@ int main() {
     printf("Digite o número de pontos turísticos:\n");
     scanf("%d", &pontos_turisticos1);
 
-    // Carta 2
+    // Coletando informações da carta 2
 
-    printf("\nCarta 2:\n");
+    printf("\n    Carta 2:    \n");
     printf("Digite o nome do país:\n");
     scanf(" %[^\n]", Pais2); // espaço antes do %c para consumir o '\n' pendente.
 
@@ -51,12 +56,12 @@ int main() {
     printf("Digite o número de pontos turísticos:\n");
     scanf("%d", &pontos_turisticos2);
 
-    // Cálculo
+    // Cálculo da densidade demográfica (população / área).
 
     densidade1 = populacao1 / area1;
     densidade2 = populacao2 / area2;
 
-    // Escolha do atributo e Comparação
+    // Exibi menu de atributos para o jogador escolher.
     int opcao;
     printf("\nEscolha o atributo para comparação:\n");
     printf("1. População\n");
@@ -68,6 +73,8 @@ int main() {
     scanf("%d", &opcao);
 
     printf("\nResultado da comparação:\n");
+
+    // Compara os atributos escolhidos.
 
     switch (opcao) {
 
@@ -139,6 +146,49 @@ int main() {
         printf("Opção inválida!\n");
 
     }
+   
+}
+
+// Função principal com o menu do jogo.
+
+int main() {
+    int menu;
+
+   do {
+
+    // Menu interativo.
+
+     printf("\n    MENU PRINCIPAL    \n");
+     printf("1. Iniciar Jogo\n");
+     printf("2. Ver regras\n");
+     printf("3. Sair\n");
+     printf("Escolha uma opção: ");
+     scanf("%d", &menu);
+     getchar(); // Limpa o buffer de entrada
+
+     // Processa a opção escolhida pelo jogador.
+
+     switch (menu) {
+        case 1:
+        iniciarJogo();  // Chama a função para iniciar o jogo.
+        break;
+        case 2:
+        // Exibe as regras do jogo.
+        printf("\n    REGRAS DO JOGO    \n");
+        printf("1. Cada jogador escolhe uma carta representando um país.\n");
+        printf("2. Um atributo é escolhido para comparar as duas cartas.\n");
+        printf("3. Vence a carta com o MAIOR valor no atributo escolhido.\n");
+        printf("4. EXCEÇÃO: Para Densidade Demográfica, vence a carta com o MENOR valor.\n");
+        printf("5. Em caso de empate, o resultado é considerado empate.\n");
+        break;
+        case 3:
+        printf("\n    Saindo do jogo...    \n");
+        exit(0);  // Encerra o progrma.
+    default:
+printf("Opção invalida! Tente novamente.\n");    
+}
+} while (menu != 3);  // Repete o menu até o jogador escolher sair.
 
 return 0;
 }
+// Fim do código.
