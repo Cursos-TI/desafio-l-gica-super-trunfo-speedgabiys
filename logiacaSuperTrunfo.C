@@ -5,18 +5,18 @@ int main() {
 
     // Declarações de variáveis
 
-    char estado1, estado2;
-    char codigo1[4], codigo2[4];
-    char cidade1[100], cidade2[100];
-    char abreviacao1[4], abreviacao2[4];
+    char estado1, estado2; // Variável será identificada pelas letras de A a H.
+    char codigo1[4], codigo2[4]; // Variável Estado e Cidade define o código da carta.
+    char cidade1[100], cidade2[100]; // Variável Cidade será númeradas de 1 a 4.
+    char abreviacao1[4], abreviacao2[4];  // Variável Abreviação do Estado e da Cidade.
 
-    unsigned long int populacao1, populacao2;
-    float area1, area2;
-    float pib1, pib2;
-    int pontos_turisticos1, pontos_turisticos2;
-    float densidade1, densidade2;
-    float pib_per_capita1, pib_per_capita2;
-    float SuperPoder1, SuperPoder2;
+    unsigned long int populacao1, populacao2; // Número de habitantes.
+    float area1, area2; // Área da cidade em quilometros quadrados.
+    float pib1, pib2; // O produto interno da cidade.
+    int pontos_turisticos1, pontos_turisticos2;  // Número de pontos turisticos.
+    float densidade1, densidade2; // Densidade demográfica da cidade.
+    float pib_per_capita1, pib_per_capita2;  // PIB per capita da cidade.
+    float SuperPoder1, SuperPoder2;  // Super poder.
 
     // Carta 1
     printf("Carta 1:\n");

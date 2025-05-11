@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "logiacaSuperTrunfo.C": "cpp"
+        "logiacaSuperTrunfo.C": "cpp",
+        "LogicaSuperTrunfoIntermediario.C": "cpp"
     }
 }
