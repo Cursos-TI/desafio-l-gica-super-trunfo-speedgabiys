@@ -1,6 +1,5 @@
 #include <stdio.h>   // Biblioteca para entrada e saída (printf, scanf).
 #include <stdlib.h>  // Biblioteca para funções gerais como exit().
-#include <string>  // Biblioteca para manipulação de strings.
 
 // Função que inicia  o jogo
 
